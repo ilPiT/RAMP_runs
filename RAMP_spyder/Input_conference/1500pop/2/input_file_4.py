@@ -14,12 +14,6 @@ User: Irrigation Water for lowlands agroproductive zone
 from core import User, np
 User_list = []
 
-#Appliances
-
-IW_water_pump = IW.Appliance(IW,1,1700,2,60,0.2,10,occasional_use = 0.33)
-IW_water_pump.windows([420,720],[840,1020],0.35)
-
-
 ###### IGA's NON AGRICULTURAL ######
 
 #Definig users GROCERY STORE
