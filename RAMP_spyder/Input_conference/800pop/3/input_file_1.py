@@ -4,15 +4,21 @@ Created on Thu Mar  3 15:31:02 2022
 
 @author: pietr
 """
+
+'''
+Paper: Energy sufficiency, lowlands.
+User: Low Income Household
+'''
 ## 53%
 
 from core import User, np
 User_list = []
 
 ###### RESODENTIAL ######
+ 
 #Defining users LI
 
-H1 = User("low income", 34) 
+H1 = User("low income", 181) 
 User_list.append(H1)
     
 #Appliances
@@ -31,9 +37,11 @@ H1_Antenna.windows([750,840],[1082,1440],0.35)
 H1_Phone_charger = H1.Appliance(H1,2,2,1,300,0.2,5)
 H1_Phone_charger.windows([1080,1440],[0,0],0.35)
 
+
+
 #Defining users HI
 
-H2 = User("high income", 31)
+H2 = User("high income", 78)
 User_list.append(H2)
 
 #Appliances
@@ -76,7 +84,7 @@ H2_Laptop.windows([960,1200],[0,0])
 
 #Definig users
 
-Public_lighting = User("Public lighting ", 7)
+Public_lighting = User("Public lighting ", 26)
 User_list.append(Public_lighting)
 
 #Appliances
@@ -85,7 +93,7 @@ Public_lighting_lamp_post = Public_lighting.Appliance(Public_lighting,12,40,2,31
 Public_lighting_lamp_post.windows([0,362],[1082,1440],0.1)
 
 
-WSS = User("water supply system", 1)
+WSS = User("water supply system", 3)
 User_list.append(WSS)
 
 #Appliances
@@ -95,38 +103,47 @@ WSS_water_pump.windows([420,720],[840,1020],0.35)
 
 #Definig users
 
-SB = User("School type B", 1)
-User_list.append(SB)
+SC = User("School type C", 1)
+User_list.append(SC)
 
 #Appliances
 
-SB_indoor_bulb = SB.Appliance(SB,12,7,2,120,0.25,30)
-SB_indoor_bulb.windows([480,780],[840,1140],0.2)
+SC_indoor_bulb = SC.Appliance(SC,27,7,1,60,0.2,10)
+SC_indoor_bulb.windows([480,780],[0,0],0.35)
 
-SB_outdoor_bulb = SB.Appliance(SB,3,13,1,60,0.2,10)
-SB_outdoor_bulb.windows([1007,1080],[0,0],0.35)
+SC_outdoor_bulb = SC.Appliance(SC,7,13,1,60,0.2,10)
+SC_outdoor_bulb.windows([480,780],[0,0],0.35)
 
-SB_TV = SB.Appliance(SB,1,60,2,120,0.1,5, occasional_use = 0.5)
-SB_TV.windows([480,780],[840,1140],0.2)
+SC_TV = SC.Appliance(SC,5,60,1,120,0.1,5, occasional_use = 0.5)
+SC_TV.windows([480,780],[0,0],0.35)
 
-SB_radio = SB.Appliance(SB,3,4,2,120,0.1,5, occasional_use = 0.5)
-SB_radio.windows([480,780],[840,1140],0.2)
+SC_radio = SC.Appliance(SC,24,4,1,120,0.1,5, occasional_use = 0.5)
+SC_radio.windows([480,780],[0,0],0.35)
 
-SB_DVD = SB.Appliance(SB,2,8,2,120,0.1,5, occasional_use = 0.5)
-SB_DVD.windows([480,780],[840,1140],0.2)
+SC_DVD = SC.Appliance(SC,2,8,1,120,0.1,5, occasional_use = 0.5)
+SC_DVD.windows([480,780],[0,0],0.35)
 
-SB_Freezer = SB.Appliance(SB,1,200,1,1440,0,30, 'yes',3)
-SB_Freezer.windows([0,1440])
-SB_Freezer.specific_cycle_1(200,20,5,10)
-SB_Freezer.specific_cycle_2(200,15,5,15)
-SB_Freezer.specific_cycle_3(200,10,5,20)
-SB_Freezer.cycle_behaviour([580,1200],[0,0],[510,579],[0,0],[0,509],[1201,1440])
+SC_Freezer = SC.Appliance(SC,1,200,1,1440,0,30, 'yes',3)
+SC_Freezer.windows([0,1440])
+SC_Freezer.specific_cycle_1(200,20,5,10)
+SC_Freezer.specific_cycle_2(200,15,5,15)
+SC_Freezer.specific_cycle_3(200,10,5,20)
+SC_Freezer.cycle_behaviour([580,1200],[0,0],[510,579],[0,0],[0,509],[1201,1440])
 
-SB_PC = SB.Appliance(SB,1,50,2,210,0.1,10)
-SB_PC.windows([480,780],[840,1140],0.35)
+SC_PC = SC.Appliance(SC,25,50,1,210,0.1,10)
+SC_PC.windows([480,780],[0,0],0.35)
 
-SB_Phone_charger = SB.Appliance(SB,1,2,2,180,0.2,5)
-SB_Phone_charger.windows([480,780],[840,1140],0.35)
+SC_Phone_charger = SC.Appliance(SC,5,2,1,180,0.2,5)
+SC_Phone_charger.windows([480,780],[0,0],0.35)
+
+SC_Printer = SC.Appliance(SC,1,20,1,30,0.1,5)
+SC_Printer.windows([480,780],[0,0],0.35)
+
+SC_Stereo = SC.Appliance(SC,1,150,1,90,0.1,5, occasional_use = 0.33)
+SC_Stereo.windows([480,780],[0,0],0.35)
+
+SC_data = SC.Appliance(SC,1,420,1,60,0.1,5, occasional_use = 0.33)
+SC_data.windows([480,780],[0,0],0.35)
 
 
 ###### IGA's  AGRICULTURAL ######
@@ -134,7 +151,7 @@ SB_Phone_charger.windows([480,780],[840,1140],0.35)
 #Definig users IRRIGATION WATER
 
 
-IW = User("Irrigation Water", 4)
+IW = User("Irrigation Water", 14)
 User_list.append(IW)
 
 #Appliances
@@ -143,31 +160,11 @@ IW_water_pump = IW.Appliance(IW,1,1700,2,60,0.2,10,occasional_use = 0.33)
 IW_water_pump.windows([420,720],[840,1020],0.35)
 
 
-#Definig users LOWLANDS AGRO-PRODUCTIVE UNIT
-
-LAU = User("Lowlands agro-productive unit", 1)
-User_list.append(LAU)
-
-#Appliances
-
-LAU_GD = LAU.Appliance(LAU,1,9360,1,180,0.2,30,occasional_use = 0.33)
-LAU_GD.windows([420,1080],[0,0],0.35)
-
-LAU_VW = LAU.Appliance(LAU,1,1170,1,480,0.2,15,occasional_use = 0.82)
-LAU_VW.windows([420,1140],[0,0],0.35)
-
-####Safe configuration 
-
-LAU_BT = LAU.Appliance(LAU,1,370,1,700,0.2,180)
-LAU_BT.windows([300,1440],[0,0],0.35)
-
-
-
 ###### IGA's NON AGRICULTURAL ######
 
 #Definig users GROCERY STORE
 
-GS = User("Grocery Store 1", 2)
+GS = User("Grocery Store 1", 9)
 User_list.append(GS)
 
 #Appliances
@@ -189,7 +186,7 @@ GS_Radio.windows([390,450],[1140,1260],0.35)
 
 #Definig users RESTAURANT
 
-R = User("Restaurant", 2)
+R = User("Restaurant", 9)
 User_list.append(R)
 
 #Appliances
@@ -208,52 +205,3 @@ R_freezer.specific_cycle_3(200,10,5,20)
 R_freezer.cycle_behaviour([480,1200],[0,0],[300,479],[0,0],[0,299],[1201,1440])
 
 
-#Definig users ENTERTAINMENT BUSINESS
-
-EB = User("Entertainment Business", 1)
-User_list.append(EB)
-
-#Appliances
-
-EB_indoor_bulb = EB.Appliance(EB,2,7,2,120,0.2,10)
-EB_indoor_bulb.windows([1107,1440],[0,30],0.35)
-
-EB_outdoor_bulb = EB.Appliance(EB,1,13,2,600,0.2,10)
-EB_outdoor_bulb.windows([0,330],[1107,1440],0.35)
-
-
-EB_Stereo = EB.Appliance(EB,1,150,2,90,0.1,5, occasional_use = 0.33)
-EB_Stereo.windows([480,780],[0,0],0.35)
-
-EB_TV = EB.Appliance(EB,1,60,2,120,0.1,5, occasional_use = 0.33)
-EB_TV.windows([480,780],[840,1140],0.2)
-    
-EB_PC = EB.Appliance(EB,1,50,2,210,0.1,10, occasional_use = 0.33)
-EB_PC.windows([480,780],[840,1140],0.35)
-
-EB_freezer = EB.Appliance(EB,1,200,1,1440,0,30,'yes',3)
-EB_freezer.windows([0,1440],[0,0])
-EB_freezer.specific_cycle_1(200,20,5,10)
-EB_freezer.specific_cycle_2(200,15,5,15)
-EB_freezer.specific_cycle_3(200,10,5,20)
-EB_freezer.cycle_behaviour([480,1200],[0,0],[300,479],[0,0],[0,299],[1201,1440])
-
-
-#Definig users WORKSHOP
-
-WS = User("Workshop", 1)
-User_list.append(WS)
-
-#Appliances
-
-WS_indoor_bulb = WS.Appliance(WS,2,7,2,120,0.2,10)
-WS_indoor_bulb.windows([1107,1440],[0,30],0.35)
-
-WS_welding_machine = WS.Appliance(WS,1,5500,1,60,0.5,30, occasional_use = 0.3)
-WS_welding_machine.windows([0,1440],[0,0],0.35)
-
-WS_grinding_machine = WS.Appliance(WS,1,750,1,480,0.2,60, occasional_use = 0.3)
-WS_grinding_machine.windows([0,1440],[0,0],0.35)
-
-WS_Radio = WS.Appliance(WS,1,36,2,60,0.1,5)
-WS_Radio.windows([390,450],[1140,1260],0.35)

@@ -19,7 +19,7 @@ User_list = []
 #Definig users IRRIGATION WATER
 
 
-IW = User("Irrigation Water", 4)
+IW = User("Irrigation Water",9)
 User_list.append(IW)
 
 #Appliances
@@ -29,7 +29,7 @@ IW_water_pump.windows([420,720],[840,1020],0.35)
 
 #Definig users
 
-LAU = User("Lowlands agro-productive unit", 1)
+LAU = User("Lowlands agro-productive unit", 2)
 User_list.append(LAU)
 
 #Appliances
@@ -45,12 +45,11 @@ LAU_VW.windows([420,1140],[0,0],0.35)
 LAU_BT = LAU.Appliance(LAU,1,370,1,700,0.2,180)
 LAU_BT.windows([300,1440],[0,0],0.35)
 
-
 ###### IGA's NON AGRICULTURAL ######
 
 #Definig users GROCERY STORE
 
-GS = User("Grocery Store 1", 2)
+GS = User("Grocery Store 1", 5)
 User_list.append(GS)
 
 #Appliances
@@ -72,7 +71,7 @@ GS_Radio.windows([390,450],[1140,1260],0.35)
 
 #Definig users RESTAURANT
 
-R = User("Restaurant", 2)
+R = User("Restaurant", 5)
 User_list.append(R)
 
 #Appliances
@@ -92,7 +91,7 @@ R_freezer.cycle_behaviour([480,1200],[0,0],[300,479],[0,0],[0,299],[1201,1440])
 
 #Definig users
 
-WS = User("Workshop", 1)
+WS = User("Workshop", 3)
 User_list.append(WS)
 
 #Appliances
@@ -112,7 +111,7 @@ WS_Radio.windows([390,450],[1140,1260],0.35)
 
 #Definig users
 
-EB = User("Entertainment Business", 1)
+EB = User("Entertainment Business", 3)
 User_list.append(EB)
 
 #Appliances
