@@ -164,7 +164,7 @@ HP_Phone_charger.windows([480,720],[900,1440],0.35)
 HP_TV = HP.Appliance(HP,1,150,2,360,0.1,60)
 HP_TV.windows([480,720],[780,1020],0.2)
 
-HP_radio = HP.Appliance(HP,1,40,2,360,0.3,60)
+HP_radio = HP.Appliance(HP,1,40,2,300,0.2,60)
 HP_radio.windows([480,720],[780,1020],0.35)
 
 HP_PC = HP.Appliance(HP,1,200,2,300,0.1,10)
